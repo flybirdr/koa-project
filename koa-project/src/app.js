@@ -42,18 +42,3 @@ app.on('error', (err, ctx) => {
 
 app.listen()
 module.exports = app
-
-const mongoose = require("mongoose")
-const { mongoPath } = require('./config/config.default')
-
-async function connectDb() {
-  await mongoose.connect(mongoPath)
-}
-
-connectDb()
-.then(res=>{
-  console.log("mongoDb connect success")
-})
-.catch(err=>{
-  console.log("mongoDb connect failed")
-})

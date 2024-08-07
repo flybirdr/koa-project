@@ -17,26 +17,6 @@ const userSchema = new mongoose.Schema({
         set: value => MD5(value),
         select: false
     },
-    phone: {
-        type: String,
-        required: true
-    },
-    image: {
-        type: String,
-        default: null
-    },
-    cover: {
-        type: String,
-        default: null
-    },
-    channelDes: {
-        type: String,
-        default: null
-    },
-    subscribeCount: {
-        type: Number,
-        default: 0
-    },
     ...BaseModel
 })
 
