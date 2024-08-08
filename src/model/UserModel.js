@@ -1,20 +1,14 @@
 const mongoose = require("mongoose")
 const BaseModel = require("./BaseModel")
-const MD5 = require("./utils/MD5")
+const MD5 = require("../utils/md5")
 
 const userSchema = new mongoose.Schema({
-    username: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
+    username: String,
+    email: String,
     password: {
         type: String,
         required: true,
-        set: value => MD5(value),
+        set: value => md5(value),
         select: false
     },
     ...BaseModel
